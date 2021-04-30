@@ -1,1 +1,1 @@
-# GalaxyMorphology-Classification
+# 	Klasifikácia astronomických objektov metódami hlbokého učenia

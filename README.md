@@ -26,12 +26,12 @@ Obe experimenty boli naprogramované v jazyku Python za použitia Jupyter Notebo
 Pred spustením kódu je dôležité stiahnuť dáta z odkazov spomenutých vyššie a rozbaliť ich vo svojom pracovnom adresári. Ak po spustení kódu vyskočí chyba, že niektorá z knižníc nie je nainštalovaná, ľahko ju dodatočne nainštalujete príkazom : pip install "názov knižnice"
 
 
-#### final
+#### classification_over_50
 
 V tomto skripte, ktorý môžeme označiť ako experiment 1, sa na začiatku udeje čistenie a výber dát, kde vyberieme len také galaxie, ktoré boli anotované s viac ako 50% dôveryhodnosťou. Ďalej si necháme len tie atribúty, ktoré rozhoduju o tom, či galaxia patrí do jednej zo 4 predikovaných tried. Takto upravené dáta si rozdelíme v pomere 80:20 na trenovaciu a testovaciu množinu a následne vytvoríme v adresari priečinky "trenovacie_data" a "testovacie_data", do ktorých skopírujeme už vybrané obrázky pre trenovaciu a testovaciu časť. Nasledovne transformujeme obrazky a vytvárame klasifikátor. Na konci vidíme vyhodnotenie úspešnosti daného modelu a taktiež priebeh trenovanie modelu.
 
-#### final_augmentation
+#### classification_over_80
 
-V tomto druhom experimente postupujeme podobne ako v tom prvom, avšak na začiatku si trénovaciu časť zmenšíme, keď vyberieme iba tie obrázky, kde dôveryhodnosť anotácie bola viac než 80%. Tým sa nám oproti prvému experimentu zmenší trénovacia množina takmer 4 násobne, čo následne riešime augmentáciou dát. Vytvoríme rotácie obrázkov v trénovacej množine o 90 a 270 stupnov a vytvorime priečinok "trenovacie_data_nad_80". Tento dataset ďalej rozdelíme na trenovaciu a validačnú časť a natrénujeme na nich klasifikator na zaklade konvolučnych neuronových sieti, ako sme to spravili aj v prvom experimente. Výsledky priebehu učenia modelu a kvantitatívne metriky sú tu tiež na zhliadnutie.
+V tomto druhom experimente postupujeme podobne ako v tom prvom, avšak na začiatku si celú dátovu množinu zmenšíme, keď vyberieme iba tie obrázky, kde dôveryhodnosť anotácie bola viac než 80%. Po takomto čistení dát si dataset rozdelíme v pomere 8:2, pričom menšia časť ostane ako nezávislá testovacia množina na vyhodnotenie modelu, čiže ju už dalej nijak neupravujeme ani dáta neaugmentujeme. Oproti prvému experimentu sa nám zmenšila trénovacia množina takmer 4 násobne, čo následne riešime augmentáciou dát. Vytvoríme rotácie obrázkov v trénovacej množine o 90 a 270 stupnov a vytvorime priečinok "trenovacie_data_nad_80". Tento dataset ďalej rozdelíme na trenovaciu a validačnú časť a natrénujeme na nich klasifikator na zaklade konvolučnych neuronových sieti, ako sme to spravili aj v prvom experimente. Výsledky priebehu učenia modelu a kvantitatívne metriky sú tu tiež na zhliadnutie.
 
 
